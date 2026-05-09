@@ -2,34 +2,51 @@
 
 ## Project Summary
 
-In this project you will build and explain a small music recommender system.
+This project simulates a simplified music recommendation system inspired by platforms like Spotify and YouTube. The recommender uses a content-based filtering approach to compare song attributes with a user's musical preferences in order to generate personalized recommendations.
 
-Your goal is to:
+The system analyzes features such as genre, mood, energy, tempo, valence, danceability, and acousticness. Each song receives a score based on how closely it matches the user's preferred musical vibe. Songs are then ranked from highest score to lowest score to generate recommendations.
 
-- Represent songs and a user "taste profile" as data
-- Design a scoring rule that turns that data into recommendations
-- Evaluate what your system gets right and wrong
-- Reflect on how this mirrors real world AI recommenders
-
-Replace this paragraph with your own summary of what your version does.
-
----
+The goal of this project is to understand how recommendation systems transform user preferences and song data into predictions, while also exploring the limitations, bias, and tradeoffs involved in AI-driven personalization systems.
 
 ## How The System Works
 
-Explain your design in plain language.
+This recommender system uses a content-based filtering approach to recommend songs based on a user's musical preferences. Instead of comparing users to other listeners, the system compares song attributes directly to a user's preferred features.
 
-Some prompts to answer:
+Each song contains data such as genre, mood, energy, tempo, valence, danceability, and acousticness. The recommender compares these attributes against a user profile and assigns a score to each song based on similarity.
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+The system prioritizes genre and mood matches because they define the overall musical vibe more strongly than numerical attributes alone. Numerical features like energy and valence are also used to reward songs that are closer to the user's preferred intensity and emotional tone.
 
-You can include a simple diagram or bullet list if helpful.
+After each song receives a score, the recommender ranks the songs from highest score to lowest score and returns the best matches.
 
----
+### Features Used
+
+- genre
+- mood
+- energy
+- tempo_bpm
+- valence
+- danceability
+- acousticness
+
+### User Profile Data
+
+The user profile stores preferences such as:
+
+- favorite genre
+- preferred mood
+- preferred energy level
+- preferred tempo range
+
+### Recommendation Logic
+
+The recommender calculates a score for every song.
+
+Examples:
+- matching genre = high score boost
+- matching mood = medium to high score boost
+- similar energy and valence = additional points
+
+Songs with the highest scores become recommendations.
 
 ## Getting Started
 
